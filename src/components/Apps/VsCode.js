@@ -17,5 +17,7 @@ const VsCode = (props) => {
   );
 };
 
+
+//Link for the original repo: https://github.com/conwnet/github1s
 export default VsCode;
 
