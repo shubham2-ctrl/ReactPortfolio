@@ -2,3 +2,7 @@
 /package-lock.json
 /.env
 /.eslintcache
+/build
+/firebase.json
+/.firebaserc
+/.firebase
