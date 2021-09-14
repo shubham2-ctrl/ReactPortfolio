@@ -1,0 +1,19 @@
+.logo_container-windows_again{
+    margin: 0 .35rem;
+    height: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
+.logo_container-windows_again:hover,
+.logo_container-windows_again:active{
+    background-color: rgba(224, 235, 235, 0.25);
+}
+.logo_container-windows_again p{
+    color: white;
+    text-align: center;
+    padding:  0.15rem 0.25rem;
+    cursor: default;
+    font-size: 0.8rem;
+}

@@ -1,0 +1,258 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,500;1,200&display=swap");
+
+.aboutMeNew {
+  background: #202020;
+  z-index: 9;
+  position: absolute;
+  width: 80%;
+  height: 80%;
+  left: 5%;
+  top: 5%;
+  overflow: auto;
+}
+@media (min-width: 60rem) {
+  .aboutMeNew {
+    background: #202020;
+    z-index: 9;
+    position: absolute;
+    width: 50%;
+    height: 80%;
+    left: 5%;
+    top: 5%;
+    overflow: auto;
+  }
+}
+.container {
+  display: flex;
+
+  /* height: 100%; */
+  justify-content: center;
+  align-items: center;
+  padding: 1rem 0;
+  overflow: hidden;
+}
+.header {
+  color: white;
+
+  font-family: "poppins", "Arial";
+  font-weight: bold;
+  text-align: center;
+  letter-spacing: 2px;
+}
+
+.imageContainer {
+  width: 100%;
+  height: 50%;
+  font-weight: 700;
+  display: flex;
+  /* justify-content: center;
+    align-items: center; */
+  flex-direction: column;
+  margin: 1rem;
+  margin-top: 2rem;
+
+  /* margin-left: 34%; */
+}
+
+.containerLeft {
+  width: 33%;
+  height: 100%;
+  background: #191919;
+  position: absolute;
+  bottom: 0;
+  top: 0;
+
+  padding: 2rem 0;
+  color: white;
+  text-align: center;
+  display: none;
+}
+
+.SideNavHeaders {
+  margin: 0.75rem 0;
+}
+.quote {
+  color: white;
+  text-align: center;
+  font-size: 18px;
+  font-family: "poppins", "Arial";
+  margin-top: 0.75rem;
+}
+.btnSideNav {
+  width: 100%;
+  background: #191919;
+  border: none;
+  color: white;
+  font-family: "poppins", "Arial";
+  font-size: 1rem;
+  font-weight: bolder;
+  text-align: left;
+  padding-left: 1rem;
+}
+.btnSideNav:hover {
+  background-color: #333333;
+  cursor: pointer;
+}
+@media (min-width: 60rem) {
+  .containerLeft {
+    display: block;
+    width: 21%;
+  }
+
+  .imageContainer {
+    padding: 0.75rem;
+    max-width: 1500px;
+    margin-left: 21%;
+  }
+}
+.imageContainer h4 {
+  margin: 0.5rem 0;
+  background: -webkit-linear-gradient(rgb(253, 255, 255), rgb(52, 221, 187));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-family: "poppins", "Arial";
+  font-size: 1.5rem;
+  font-weight: bolder;
+}
+.imageContainer img {
+  width: 150px;
+  height: 150px;
+  border-radius: 6px;
+  border: 6px solid grey;
+
+  border-radius: 6px;
+}
+
+.resumeHolder {
+  height: 720px;
+  width: 100%;
+}
+.MenuContainers {
+  top: 0;
+  left: 0;
+  position: fixed;
+  z-index: 99999;
+  background: #191919;
+
+  display: flex;
+  padding-left: 30px;
+  display: none;
+}
+
+.menuButton {
+  background: #191919;
+  position: fixed;
+  z-index: 99998;
+  width: 30px;
+  height: 30px;
+  left: 0;
+  top: 3rem;
+
+  text-align: center;
+  display: none;
+}
+
+@media (max-width: 60rem) {
+  .MenuContainers {
+    cursor: pointer;
+    display: flex;
+  }
+  .menuButton {
+    display: block;
+  }
+ 
+  .MenuContainers:hover {
+    cursor: pointer;
+    width: 60%;
+    height: 100%;
+    background: #191919;
+  }
+}
+.iframe {
+  margin-top: 2rem;
+  width: 100%;
+  height: 100%;
+}
+.Headers{
+  color: white;
+  margin-bottom: 0.75rem;
+  font-size: 1rem;
+  font-family: "poppins", "Arial";
+
+}
+
+.tags {
+  list-style: none;
+  margin: 0;
+  overflow: hidden; 
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.tags li {
+  float: left; 
+}
+
+.tag {
+  border: none;
+  background: rgb(255, 254, 254);
+  border-radius: 3px 0 0 3px;
+  color: rgb(10, 10, 10);
+  display: inline-block;
+  height: 26px;
+  line-height: 26px;
+  padding: 0 20px 0 23px;
+  position: relative;
+  margin: 0 10px 10px 0;
+  text-decoration: none;
+  -webkit-transition: color 0.2s;
+  font-family: "poppins", "Arial";
+  font-weight: bold;
+}
+
+.tag::before {
+  background: rgb(255, 254, 254);
+  border-radius: 10px;
+  box-shadow: inset 0 1px rgba(0, 0, 0, 0.25);
+  content: '';
+  height: 6px;
+  left: 10px;
+  position: absolute;
+  width: 6px;
+  top: 10px;
+}
+
+.tag::after {
+  background: #fff;
+  border-bottom: 13px solid transparent;
+  border-left: 10px solid #eee;
+  border-top: 13px solid transparent;
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.tag:hover {
+  cursor: pointer;
+  background-color: crimson;
+  color: white;
+}
+
+.tag:hover::after {
+  cursor: pointer;
+   border-left-color: crimson; 
+}
+.skillsContainer{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+@media (max-width:60rem){
+  .iframe{
+    margin-top: 3rem;
+  }
+}

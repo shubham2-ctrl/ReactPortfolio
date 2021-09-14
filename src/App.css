@@ -1,0 +1,13 @@
+*{
+    font-family: Arial, Helvetica, sans-serif;
+}
+.my_dekstop-div{
+    height: 95vh;
+    width: 100%;
+    overflow: hidden;
+}
+@media(max-width:500px){
+    .my_dekstop-div{
+        height: 90vh;
+    }
+}

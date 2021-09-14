@@ -1,0 +1,27 @@
+.wallpaper{
+    /* background: url('../../images/wallpaper/wallpaper1.jpg') no-repeat; */
+    
+    width: 100%;
+    background-position: center;
+    /* height: 88vh; */
+
+}
+@media (min-width : 60rem) {
+    .wallpaper{
+        height: 94.9vh;
+        height: 100%;
+    }
+    
+}
+.box {
+    position: absolute;
+    cursor: move;
+    color: black;
+    max-width: 215px;
+    border-radius: 5px;
+    padding: 1em;
+    margin: auto;
+    user-select: none;
+    
+  }
+  

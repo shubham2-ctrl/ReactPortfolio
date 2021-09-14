@@ -1,0 +1,67 @@
+.containerLockScreen{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    box-sizing: border-box;
+    background: url(../../images/wallpaper/wallpaper1.jpg);
+}
+.containerImageLockScreen{
+    width: 50%;
+   
+    height: 200px;
+}
+@media(min-width:60rem){
+    .containerImageLockScreen{
+        width: 20%;
+       
+        height: 400px;
+    }
+
+}
+
+.containerImageLockScreen img{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+.containerImageLockScreen h1{
+    font-size: 20px;
+    color : white;
+    text-align: center;
+    font-weight: 100;
+}
+.buttonContainer{
+    margin: 3rem 0;
+}
+.buttonContainer button{
+    padding : 0.75rem;
+    font-size: 20px;
+    border-radius: 5px;
+    border: none;
+    font-weight: 100;
+   
+
+}
+.buttonContainer button:hover{
+    background: #0078d7;
+    color: white;
+}
+.timeDateHolder{
+    position: absolute;
+    bottom: 10%;
+    left: 5%;
+}
+.timeDateHolder h1 {
+    font-size: 7rem;
+    color: white;
+    font-weight: 100;
+
+}
+.timeDateHolder h6{
+    color: white;
+    font-size: 2rem;
+    font-weight: 100;
+    margin-left: 25px;
+}

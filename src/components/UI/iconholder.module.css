@@ -1,0 +1,10 @@
+
+.logo_container-windows{
+    height: 3rem;
+    margin: 0 .25rem;
+    display: flex;
+    align-items: center;
+}
+.logo_container-windows:hover{
+    background-color: rgba(224, 235, 235, 0.25);
+}

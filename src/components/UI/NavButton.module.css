@@ -1,0 +1,51 @@
+
+.opening_Closing-Button{
+    position: absolute;
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+    background-color: #000000;
+
+    z-index: 6;
+   
+}
+.opening_Closing-Button button{
+    background: transparent;
+    cursor: pointer;
+    color: white;
+    padding: 0.6rem;
+    margin:0  1rem;
+    
+    margin-right: 0;
+    border: none;
+    font-size: 1.25rem;
+}
+
+.opening_Closing-Button button:hover{
+    background: red;
+    cursor: pointer;
+   
+}
+@media(min-width:60rem){
+    .opening_Closing-Button{
+        display: flex;
+        width: 100%;
+        z-index: 6;
+      
+       
+    }
+    .opening_Closing-Button button{
+        background: transparent;
+        color: white;
+        padding: 0.25rem;
+        margin:0  0.5rem;
+    
+        margin-right: 0;
+        border: none;
+        font-size: 1.25rem;
+    }
+    .opening_Closing-Button button:hover{
+        background: red;
+    }
+}
+

@@ -1,0 +1,136 @@
+.selfDrawerContainer{
+    width: 60%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 1%;
+    height: 100%;
+    background: #1f1f1f;
+    animation: slide 0.2s ease-in;
+    overflow: hidden;
+    z-index: 10000;
+    
+   
+}
+@media (min-width : 60rem){
+    .selfDrawerContainer{
+        width: 21%;
+    }
+    
+}
+@keyframes slide {
+    from {
+        width: 0;
+    }
+    to{
+        width: 21%;
+    }
+    
+}
+
+.upperHalfContainer{
+    display: flex;
+    height: 55%;
+    align-items: center;
+    justify-content: center;
+}
+
+.upperHalfContainer p{
+    color: white;
+}
+.lowerhalfContainer{
+    
+    display: flex;
+    
+    flex-wrap: wrap;
+    justify-content: center;
+    
+}
+
+.accesoriesContainer{
+    padding: 0.15rem;
+    margin: .10rem;
+    background: #4c4c4c;
+    color: white;
+    width: 20%;
+    height: 64px;
+    font-size: 0.65rem;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: lighter;
+    display: flex;
+    flex-direction: column;
+    align-items: space-between;
+}
+.accesoriesContainer p{
+    color: white;
+    margin-top: 1.15rem;
+}
+.accesoriesContainer i{
+   font-size: 20px;
+   padding: 0.15rem;
+}
+.accesoriesContainer:hover{
+    border: 1px solid white;
+}
+.accesoriesContainer:nth-child(5),
+.accesoriesContainer:nth-child(3){
+    background: #0078d7;
+}
+.brightnessHolder{
+    margin: 0.5rem;
+    color: white;
+    height: 8%;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+  
+}
+.brightnessHolder i{
+    margin-right: 6px;
+}
+
+.brigtnessImage{
+    color: white;
+    margin: 0.75rem;
+
+}
+.brigtnessImage img{
+    width: 12px;
+    height: 12px;
+}
+
+@media(max-width:600px){
+    .accesoriesContainer{
+        width: 22%;
+    }
+    .upperHalfContainer{
+        height: 50%;
+    }
+    .accesoriesContainer p:nth-child(2),
+    .accesoriesContainer p:nth-child(3),
+    .accesoriesContainer p:nth-child(4),
+    .accesoriesContainer p:nth-child(6),
+    .accesoriesContainer p:nth-child(8),
+    .accesoriesContainer p:nth-child(13),
+    .accesoriesContainer p:nth-child(14){
+            margin-top: 0.65rem;
+    }
+}
+.slider{
+    margin: auto 0;
+    width: 300px;
+    height: 2px;
+}
+.slider::-webkit-slider-thumb {
+    -moz-appearance: none;
+    background: #ffffff;
+    cursor: pointer;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+  }
+@media(max-width:60rem){
+    .slider{
+        width: 200px;
+    }
+}
