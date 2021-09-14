@@ -3,6 +3,7 @@ import aboutme from "../../images/icons/aboutme.png";
 import spotify from "../../images/icons/Spotify.png";
 import chrome from "../../images/icons/chrome.png";
 import vscode from "../../images/icons/VsCode.png";
+import contact from "../../images/icons/contact.png";
 import Spotify from "../Apps/Spotify";
 import AboutMe from "../Apps/AboutMe";
 import VsCode from "../Apps/VsCode";
@@ -16,6 +17,8 @@ var myIndex = 1;
 var spotifyIndex = 1;
 var chromeIndex = 1;
 var vsCodeIndex = 1;
+var myContact = 1;
+var personalize = 1;
 
 const DekstopLogo = () => {
   const aboutMeOpened = useSelector(
@@ -30,7 +33,12 @@ const DekstopLogo = () => {
 
   const chromeOpened = useSelector((state) => state.isappOpened.isChromeOpened);
 
-  const personalizeWindows = useSelector((state)=>state.isappOpened.isPersonalize)
+  const contactOpened = useSelector((state) => state.isappOpened.isContact);
+
+  const personalizeWindows = useSelector(
+    (state) => state.isappOpened.isPersonalize
+  );
+  
 
   
   const dispatch = useDispatch();
@@ -46,8 +54,19 @@ const DekstopLogo = () => {
         myIndex += chromeIndex + 1;
       } else if (vsCodeOpened) {
         myIndex += vsCodeIndex + 1;
-      } else if (chromeOpened && spotifyOpened && aboutMeOpened) {
-        myIndex += vsCodeIndex + chromeIndex + vsCodeIndex;
+      } else if (personalizeWindows) {
+        myIndex += personalize + 1;
+      } else if (contactOpened) {
+        myIndex += myContact + 1;
+      } else if (
+        chromeOpened &&
+        spotifyOpened &&
+        aboutMeOpened &&
+        contactOpened &&
+        personalizeWindows
+      ) {
+        myIndex +=
+          vsCodeIndex + chromeIndex + vsCodeIndex + myContact + personalize;
       }
     }
     if (id === "spotify") {
@@ -59,7 +78,17 @@ const DekstopLogo = () => {
         spotifyIndex += chromeIndex + 1;
       } else if (vsCodeOpened) {
         spotifyIndex += vsCodeIndex + 1;
-      } else if (chromeOpened && vsCodeOpened && aboutMeOpened) {
+      } else if (contactOpened) {
+        spotifyIndex += myContact + 1;
+      } else if (personalizeWindows) {
+        myIndex += personalize + 1;
+      } else if (
+        chromeOpened &&
+        vsCodeOpened &&
+        aboutMeOpened &&
+        personalizeWindows &&
+        contactOpened
+      ) {
         spotifyIndex += chromeIndex + vsCodeIndex + myIndex;
       }
     }
@@ -72,8 +101,19 @@ const DekstopLogo = () => {
         chromeIndex += vsCodeIndex + 1;
       } else if (spotifyOpened) {
         chromeIndex += spotifyIndex + 1;
-      } else if (vsCodeOpened && spotifyOpened && aboutMeOpened) {
-        chromeIndex += vsCodeIndex + spotifyIndex + myIndex;
+      } else if (contactOpened) {
+        chromeIndex += myContact + 1;
+      } else if (personalizeWindows) {
+        chromeIndex += personalize + 1;
+      } else if (
+        vsCodeOpened &&
+        spotifyOpened &&
+        aboutMeOpened &&
+        personalizeWindows &&
+        contactOpened
+      ) {
+        chromeIndex +=
+          vsCodeIndex + spotifyIndex + myIndex + myContact + personalize;
       }
     }
     if (id === "vsCode") {
@@ -85,8 +125,64 @@ const DekstopLogo = () => {
         vsCodeIndex += chromeIndex + 1;
       } else if (spotifyOpened) {
         vsCodeIndex += spotifyIndex + 1;
-      } else if (chromeOpened && spotifyOpened && aboutMeOpened) {
-        vsCodeIndex += chromeIndex + spotifyIndex + myIndex;
+      } else if (contactOpened) {
+        vsCodeIndex += myContact + 1;
+      } else if (personalizeWindows) {
+        vsCodeIndex += personalize + 1;
+      } else if (
+        chromeOpened &&
+        spotifyOpened &&
+        aboutMeOpened &&
+        contactOpened &&
+        personalizeWindows
+      ) {
+        vsCodeIndex +=
+          chromeIndex + spotifyIndex + myIndex + myContact + personalize;
+      }
+    }
+    if (id === "contact") {
+      dispatch(appActions.contactOpened(true));
+      if (aboutMeOpened) {
+        myContact += myIndex + 1;
+      } else if (chromeOpened) {
+        myContact += chromeIndex + 1;
+      } else if (spotifyOpened) {
+        myContact += spotifyIndex + 1;
+      } else if (vsCodeOpened) {
+        myContact += vsCodeIndex + 1;
+      } else if (personalizeWindows) {
+        myContact += personalize + 1;
+      } else if (
+        chromeOpened &&
+        spotifyOpened &&
+        aboutMeOpened &&
+        vsCodeOpened &&
+        personalizeWindows
+      ) {
+        myContact +=
+          chromeIndex + spotifyIndex + myIndex + vsCodeIndex + personalize;
+      }
+    }
+    if (id === "personalize") {
+      if (aboutMeOpened) {
+        personalize += myIndex + 1;
+      } else if (chromeOpened) {
+        personalize += chromeIndex + 1;
+      } else if (spotifyOpened) {
+        personalize += spotifyIndex + 1;
+      } else if (vsCodeOpened) {
+        personalize += vsCodeIndex + 1;
+      } else if (contactOpened) {
+        personalize += myContact + 1;
+      } else if (
+        chromeOpened &&
+        spotifyOpened &&
+        aboutMeOpened &&
+        vsCodeOpened &&
+        contactOpened
+      ) {
+        personalize +=
+          chromeIndex + spotifyIndex + myIndex + vsCodeIndex + personalize;
       }
     }
   };
@@ -107,13 +203,41 @@ const DekstopLogo = () => {
     if (id === "personalized") {
       dispatch(appActions.personalizeOpened(false));
     }
+    if (id === "contact") {
+      dispatch(appActions.contactOpened(false));
+    }
   };
+
+  if (aboutMeOpened) {
+    personalize += myIndex + 1;
+  } else if (chromeOpened) {
+    personalize += chromeIndex + 1;
+  } else if (spotifyOpened) {
+    personalize += spotifyIndex + 1;
+  } else if (vsCodeOpened) {
+    personalize += vsCodeIndex + 1;
+  } else if (contactOpened) {
+    personalize += myContact + 1;
+  } else if (
+    chromeOpened &&
+    spotifyOpened &&
+    aboutMeOpened &&
+    vsCodeOpened &&
+    contactOpened
+  ) {
+    personalize +=
+      chromeIndex + spotifyIndex + myIndex + vsCodeIndex + personalize;
+  }
 
   return (
     <>
-      {personalizeWindows && 
-      <Personalized onClose= {() => CloseButtonHandler("personalized")}/>
-      }
+      {personalizeWindows && (
+        <Personalized
+          onClose={() => CloseButtonHandler("personalized")}
+          style={{ zIndex: personalize }}
+          headerClicked={() => buttonHandler("personalize")}
+        />
+      )}
       {aboutMeOpened && (
         <AboutMe
           onClose={() => CloseButtonHandler("about-us")}
@@ -142,11 +266,11 @@ const DekstopLogo = () => {
           headerClicked={() => buttonHandler("vsCode")}
         />
       )}
-      {vsCodeOpened && (
+      {contactOpened && (
         <Contact
-          onClose={() => CloseButtonHandler("vsCode")}
-          style={{ zIndex: vsCodeIndex }}
-          headerClicked={() => buttonHandler("vsCode")}
+          onClose={() => CloseButtonHandler("contact")}
+          style={{ zIndex: myContact }}
+          headerClicked={() => buttonHandler("contact")}
         />
       )}
 
@@ -160,7 +284,7 @@ const DekstopLogo = () => {
           onTouchStart={() => buttonHandler("about-us")}
         >
           <img src={aboutme} alt="About Me folder"></img>
-          <p className={classes["logo_headers"]}>About Me</p>
+          <p className={classes["logo_headers"]}>About Shubham</p>
         </div>
 
         <div
@@ -193,7 +317,7 @@ const DekstopLogo = () => {
           onDoubleClick={() => buttonHandler("contact")}
           onTouchStart={() => buttonHandler("contact")}
         >
-          <img src={vscode} alt="contact"></img>
+          <img src={contact} alt="contact"></img>
           <p className={classes["logo_headers"]}>Contact</p>
         </div>
       </div>

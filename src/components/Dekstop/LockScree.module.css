@@ -9,21 +9,23 @@
 }
 .containerImageLockScreen{
     width: 50%;
-   
     height: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 @media(min-width:60rem){
     .containerImageLockScreen{
         width: 20%;
        
-        height: 400px;
+       
     }
 
 }
 
 .containerImageLockScreen img{
-    width: 100%;
-    height: 100%;
+    width: 200px;
+    height: 200px;
     border-radius: 50%;
 }
 .containerImageLockScreen h1{
@@ -36,6 +38,7 @@
     margin: 3rem 0;
 }
 .buttonContainer button{
+    margin-bottom: 1rem;
     padding : 0.75rem;
     font-size: 20px;
     border-radius: 5px;

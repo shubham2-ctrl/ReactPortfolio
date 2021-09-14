@@ -11,6 +11,12 @@
   font-weight: 100;
   
 }
+.btn{
+  color: white;
+  outline: none;
+  background-color: red;
+  
+}
 .modal_div{
 
   

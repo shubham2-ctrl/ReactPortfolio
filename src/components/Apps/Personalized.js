@@ -60,7 +60,7 @@ const Personalized = (props) => {
     : wallpaper1;
 
   return (
-    <Modal id="Personalize" onClose={props.onClose}>
+    <Modal id="Personalize" onClose={props.onClose} style={props.style} headerClicked ={props.headerClicked}>
       <div className={classes.container}>
         <div className={classes.activeWallpaper}>
           <h1> Background </h1>

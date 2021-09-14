@@ -6,13 +6,17 @@ import Drawer from "./components/UI/Drawer";
 import WindowDrawer from "./components/UI/WindowsDrawer";
 import LockScreen from "./components/Dekstop/LockScreen";
 import { lockActions } from "./store/LockButtonSlice";
+import Box from "./components/utils/Box";
 import "./App.css";
 
 const App = () => {
   const [drawerShow, setDrawerShow] = useState(false);
   const lock = useSelector((state) => state.isLocked.locked);
   const unlock = useSelector((state) => state.isLocked.unlock);
+  const arrow = useSelector((state)=>state.isappOpened.arrowClicked)
+ 
   const dispatch = useDispatch();
+
 
   const [windowClicked, setWindowClicked] = useState(false);
 
@@ -22,7 +26,7 @@ const App = () => {
     } else {
       setDrawerShow(true);
     }
-    console.log("Hello");
+    
   };
 
   const screenClickedHandler = () => {
@@ -35,7 +39,7 @@ const App = () => {
   };
 
   const unlockClickHandler = () => {
-    console.log("hi");
+    
     dispatch(lockActions.unlock());
   };
 
@@ -56,6 +60,7 @@ const App = () => {
           <Screen />
         </div>
       )}
+      {arrow && <Box/>}
       {!lock && (
         <Taskbar
           onClickLeft={handleClickMessage}

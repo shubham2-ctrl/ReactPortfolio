@@ -1,0 +1,32 @@
+.container{
+    position: absolute;
+    bottom: 3rem;
+    right: 0%;
+    display: flex;
+    background-color: #1f1f1f;
+    width: 30%;
+    display: flex;
+    justify-content: space-evenly;
+
+
+}
+@media(max-width:800px){
+    .container{
+        right : 6%;
+    }
+}
+@media(max-width:648px){
+    .container{
+        right : 10%;
+    }
+}
+@media(max-width:648px){
+    .container{
+        right : 10%;
+    }
+}
+@media(max-width:465px){
+    .container{
+        right : 28%;
+    }
+}

@@ -20,14 +20,15 @@ const Modal = (props) => {
   const myClass = maximize ? "full_width": `modal_div`;
 
   return (
-    <Draggable bounds="parent">
-      <div className={myClass} style ={props.style} onPointerEnter={props.headerClicked}  >
+    <>
+        <Draggable bounds="parent" allowAnyClick = {false} enableUserSelectHack={false} >
+      <div className={myClass} style ={props.style} onPointerEnter={props.headerClicked} >
         <div
           className={classes["opening_Closing-Button"]}
           onDoubleClick={maximizeHandler}
-          
+        
         >
-          <button onClick={() => {}} onTouchStart={() => {}}>
+          <button onClick={props.onClose} onTouchStart={props.onClose}>
             -
           </button>
           {maximize && (
@@ -50,6 +51,8 @@ const Modal = (props) => {
        
       </div>
     </Draggable>
+   </>
+   
   );
 };
 

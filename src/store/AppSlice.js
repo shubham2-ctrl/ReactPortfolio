@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const openAppsInitialState = {
   isAboutMeOpened: false,
-
+  
   isSpotifyOpened: false,
 
   isVsCodeOpened: false,
@@ -11,7 +11,9 @@ const openAppsInitialState = {
 
   isPersonalize : false,
 
+  isContact:false,
   
+  arrowClicked:false
 };
 
 const openAppSlice = createSlice({
@@ -20,10 +22,14 @@ const openAppSlice = createSlice({
   reducers: {
     AboutMeOpened(state, action) {
       let value = action.payload;
+      
+      
+      
       state.isAboutMeOpened = value;
     },
     SpotifyOpened(state, action) {
       let value = action.payload;
+      state.zIndex +=1;
       state.isSpotifyOpened = value;
     },
     vsCodeOpened(state, action) {
@@ -38,7 +44,17 @@ const openAppSlice = createSlice({
       let value = action.payload;
       state.isPersonalize = value;
     },
-  },
+    contactOpened(state, action) {
+      let value = action.payload;
+      state.isContact = value;
+     
+    },
+    arrowOpened(state, action) {
+      let value = action.payload;
+      state.arrowClicked = value;
+     
+    },
+  }
 });
 
 export const appActions = openAppSlice.actions;

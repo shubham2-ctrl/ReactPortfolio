@@ -7,7 +7,7 @@ const VsCode = (props) => {
     <Modal  onClose={props.onClose} style={props.style} headerClicked ={props.headerClicked}>
   
         <iframe
-          src="https://github1s.com/nandan-thakur/portfolio/blob/HEAD/src/components/ubuntu.js" frameBorder="0" 
+          src="https://github1s.com/shubham2-ctrl/PortfolioReact" frameBorder="0" 
           className={classes.iframe}
           title="VsCode"
         
